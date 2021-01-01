@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/yusuf_taha_atalay.dir/yusuf_taha_atalay.c.o  -o yusuf_taha_atalay 
