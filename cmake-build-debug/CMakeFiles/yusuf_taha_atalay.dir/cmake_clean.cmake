@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/yusuf_taha_atalay.dir/yusuf_taha_atalay.c.o"
-  "yusuf_taha_atalay"
+  "CMakeFiles/yusuf_taha_atalay.dir/yusuf_taha_atalay.c.obj"
+  "libyusuf_taha_atalay.dll.a"
+  "yusuf_taha_atalay.exe"
+  "yusuf_taha_atalay.exe.manifest"
   "yusuf_taha_atalay.pdb"
 )
 

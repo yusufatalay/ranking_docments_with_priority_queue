@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/desmond/Desktop/C Projects/Ranking Documents Priority Queue/Priority Queue Project/yusuf_taha_atalay.c" "/home/desmond/Desktop/C Projects/Ranking Documents Priority Queue/Priority Queue Project/cmake-build-debug/CMakeFiles/yusuf_taha_atalay.dir/yusuf_taha_atalay.c.o"
+  "C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/yusuf_taha_atalay.c" "C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/CMakeFiles/yusuf_taha_atalay.dir/yusuf_taha_atalay.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

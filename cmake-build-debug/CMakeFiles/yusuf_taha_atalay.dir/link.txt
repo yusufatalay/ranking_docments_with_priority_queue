@@ -1,1 +1,3 @@
-/usr/bin/cc -g   CMakeFiles/yusuf_taha_atalay.dir/yusuf_taha_atalay.c.o  -o yusuf_taha_atalay 
+"C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\yusuf_taha_atalay.dir/objects.a
+C:\PROGRA~2\Dev-Cpp\MinGW64\bin\ar.exe cr CMakeFiles\yusuf_taha_atalay.dir/objects.a @CMakeFiles\yusuf_taha_atalay.dir\objects1.rsp
+C:\PROGRA~2\Dev-Cpp\MinGW64\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\yusuf_taha_atalay.dir/objects.a -Wl,--no-whole-archive  -o yusuf_taha_atalay.exe -Wl,--out-implib,libyusuf_taha_atalay.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\yusuf_taha_atalay.dir\linklibs.rsp

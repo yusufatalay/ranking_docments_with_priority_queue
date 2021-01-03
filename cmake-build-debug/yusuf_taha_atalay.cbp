@@ -8,78 +8,78 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/desmond/Desktop/C Projects/Ranking Documents Priority Queue/Priority Queue Project/cmake-build-debug"/>
+				<Option working_dir="C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/desmond/Desktop/C Projects/Ranking Documents Priority Queue/Priority Queue Project/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/desmond/Desktop/C Projects/Ranking Documents Priority Queue/Priority Queue Project/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="yusuf_taha_atalay">
-				<Option output="/home/desmond/Desktop/C Projects/Ranking Documents Priority Queue/Priority Queue Project/cmake-build-debug/yusuf_taha_atalay" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/desmond/Desktop/C Projects/Ranking Documents Priority Queue/Priority Queue Project/cmake-build-debug"/>
+				<Option output="C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/yusuf_taha_atalay.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include"/>
+					<Add directory="C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/../../../../include"/>
+					<Add directory="C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 yusuf_taha_atalay"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 yusuf_taha_atalay"/>
+					<CompileFile command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="yusuf_taha_atalay/fast">
-				<Option output="/home/desmond/Desktop/C Projects/Ranking Documents Priority Queue/Priority Queue Project/cmake-build-debug/yusuf_taha_atalay" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/desmond/Desktop/C Projects/Ranking Documents Priority Queue/Priority Queue Project/cmake-build-debug"/>
+				<Option output="C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/yusuf_taha_atalay.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include"/>
+					<Add directory="C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/../../../../include"/>
+					<Add directory="C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/include-fixed"/>
+					<Add directory="C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/4.9.2/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 yusuf_taha_atalay/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/desmond/Desktop/C\ Projects/Ranking\ Documents\ Priority\ Queue/Priority\ Queue\ Project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 yusuf_taha_atalay/fast"/>
+					<CompileFile command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/Dev-Cpp/MinGW64/bin/mingw32-make.exe -f &quot;C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/desmond/Desktop/C Projects/Ranking Documents Priority Queue/Priority Queue Project/yusuf_taha_atalay.c">
+		<Unit filename="C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/yusuf_taha_atalay.c">
 			<Option target="yusuf_taha_atalay"/>
 		</Unit>
-		<Unit filename="/home/desmond/Desktop/C Projects/Ranking Documents Priority Queue/Priority Queue Project/CMakeLists.txt">
+		<Unit filename="C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

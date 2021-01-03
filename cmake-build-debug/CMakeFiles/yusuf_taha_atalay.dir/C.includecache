@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/desmond/Desktop/C Projects/Ranking Documents Priority Queue/Priority Queue Project/yusuf_taha_atalay.c
+C:/Users/YUSUF ATALAY/CLionProjects/ranking_docments_with_priority_queue/yusuf_taha_atalay.c
 stdio.h
 -
 stdlib.h
@@ -14,7 +14,5 @@ stdlib.h
 string.h
 -
 dirent.h
--
-unistd.h
 -
 
