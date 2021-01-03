@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <dirent.h>
 
 // Yusuf Taha ATALAY
 
@@ -41,8 +42,14 @@ node *NewNode(char *fileName, int relevancyScore) {
 }
 
 
+int main() {
 
+    char searchKeyword[30];
+    printf("Type the search keyword: ");
+    fgets(searchKeyword, 30, stdin);
+    printf("\n %s", searchKeyword);
 
+}
 
 
 

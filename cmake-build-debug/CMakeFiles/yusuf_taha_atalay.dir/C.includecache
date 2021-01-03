@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/desmond/Desktop/C Projects/Ranking Documents Priority Queue/Priority Queue Project/yusuf_taha_atalay.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+dirent.h
+-
+unistd.h
+-
+
