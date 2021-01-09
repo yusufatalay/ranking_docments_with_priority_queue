@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
+#include <ctype.h>
 
 // Yusuf Taha ATALAY
 
@@ -43,31 +44,40 @@ node *NewNode(char *fileName, int relevancyScore) {
 
 // this method will take a keyword and a file to search the keyword occurrence count
 int fileScore(char *content, char *keyword) {
-    int content_length, keyword_length;
-    int keyword_count = 0;
-    int keyword_found = 0;  //act as a boolean
-    content_length = strlen(content);
-    keyword_length = strlen(keyword);
+//TODO:
+// We need to tokenize the given content string according to whitespaces it contains
+// Use stricmp for comparing the keyword and token because its cane insensitive
+// Consider other occurrence of the keyword like keyword, and keyword.
+// Now we need to traverse through the array and increment the counter every time we encounter the keyword in the array
 
-    // the index of first matching character cannot be greater than content_length-keyword_length
-    for (int i = 0; i < content_length - keyword_length; i++) {
-        // in this method i created a placeholder as length of search keyword and program shifts it bit by bit and increments the counter when keyword occurs
 
-        // lets assume the keyword exists in the context
-        keyword_found = 1;
-        for (int j = 0; j < keyword_length; j++) {
+    char delimiter[] = " "; // delimiter is single white space
+    char *token;
+    int counter = 0;
 
-            if (content[i + j] != keyword[j]) {
-                keyword_found = 0;
-                break;
-            }
+    token = strtok(content, delimiter);  //getting the first token
+    keyword[strlen(keyword) - 1] = '\0';  // last character of my input was a newline character this is how  i mitigate
+
+    // if the keyword exist in the content and have an postfix like "," or "."  we need to tell the code that include them too.
+    char option1[30];
+    char option2[30];
+    strcpy(option1, keyword);
+    strcpy(option2, keyword);
+    strncat(option1, ",", 1);
+    strncat(option2, ".", 1);
+
+    while (token != NULL) {
+
+        if ((stricmp(token, keyword) == 0) || (stricmp(token, option1) == 0) ||
+            (stricmp(token, option2) == 0)) {   //"stricmp" is case insensitive;
+            counter++;
         }
-        if (keyword_found == 1) {
-            keyword_count++;
-        }
+
+        token = strtok(NULL, delimiter);  //continue to the next  token;
     }
+    return counter;
 
-    return keyword_count;
+
 }
 
 
@@ -76,9 +86,23 @@ int main() {
     char searchKeyword[30];
     printf("Type the search keyword: ");
     fgets(searchKeyword, 30, stdin);
-    printf("\n %s", searchKeyword);
 
-    int file_count = 0;  // how many files we have in the folder i will store them as a node in an array before building the heap
+    // let see how many files in the folder
+
+    int file_count = 0;    // how many files we have in the folder i will store them as a node in an array before building the heap
+    DIR *dirp;
+    struct dirent *each_file;
+
+    dirp = opendir("files"); /* There should be error handling after this */
+    while ((each_file = readdir(dirp)) != NULL) {
+        file_count++;
+    }
+    closedir(dirp);
+
+    //this is where i will hold the file nodes later append them to the binomial tree  minus 2 is for escaping the ./ and ../ directories
+    node fileNodes[file_count - 2];
+
+
     DIR *folder;
     FILE *file_pointer;
     struct dirent *entry;
@@ -89,6 +113,7 @@ int main() {
         return (1);
     } else {
         puts("Directory is opened!");
+        int node_index = 0; //i will use this as a index number for appending the nodes to the node array
 
         // after opening the directory lets traverse all the files in the directory
         while ((entry = readdir(folder)) != NULL) {
@@ -103,7 +128,7 @@ int main() {
             strcpy(file_name, entry->d_name);
             char file_position[23];
             sprintf(file_position, "%s%s", "files/", file_name);
-            printf("%s\n", file_position);
+
 
             // i looked around a couple of files and realized that max amount of char have been more than 14k so i hope 25k char limit will do the work
             char content[25000];
@@ -120,13 +145,15 @@ int main() {
                 // since here it reads the file line by line i won't do any processing here instead i will wait it to finish
             }
             // file has been read and after this code block it will proceed to the next file
-            printf("%s\n", content);
-
+            //  printf("%s\n", content);
             keyword_count = fileScore(content, searchKeyword);
-            printf("amount of  %s  appeared in file is: %d\n",searchKeyword ,keyword_count);
-            printf("end of file\n", file_name);
+            printf("amount of  %s  appeared in file is: %d\n  ", searchKeyword, keyword_count);
+            printf("end of file: %s\n", file_name);
 
 
+            //create a node about relevant file  and append that node to  the array
+            fileNodes[node_index] = *NewNode(file_name,keyword_count);
+            keyword_count = 0;  //reset the keyword count
         }
     }
     closedir(folder);
