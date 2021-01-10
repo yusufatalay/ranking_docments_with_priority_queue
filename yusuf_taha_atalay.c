@@ -56,20 +56,23 @@ int fileScore(char *content, char *keyword) {
     int counter = 0;
 
     token = strtok(content, delimiter);  //getting the first token
-    keyword[strlen(keyword) - 1] = '\0';  // last character of my input was a newline character this is how  i mitigate
 
-    // if the keyword exist in the content and have an postfix like "," or "."  we need to tell the code that include them too.
-    char option1[30];
-    char option2[30];
+
+    // if the keyword exist in the content and have an postfix like "," , "." or "s"  we need to tell the code that include them too.
+    char option1[strlen(keyword) + 1];
+    char option2[strlen(keyword) + 1];
+    char option3[strlen(keyword) + 1];
     strcpy(option1, keyword);
     strcpy(option2, keyword);
+    strcpy(option3, keyword);
     strncat(option1, ",", 1);
     strncat(option2, ".", 1);
+    strncat(option3, "s", 1);
 
     while (token != NULL) {
 
         if ((stricmp(token, keyword) == 0) || (stricmp(token, option1) == 0) ||
-            (stricmp(token, option2) == 0)) {   //"stricmp" is case insensitive;
+            (stricmp(token, option2) == 0) || (stricmp(token, option3) == 0)) {   //"stricmp" is case insensitive;
             counter++;
         }
 
@@ -86,7 +89,8 @@ int main() {
     char searchKeyword[30];
     printf("Type the search keyword: ");
     fgets(searchKeyword, 30, stdin);
-
+    searchKeyword[strlen(searchKeyword) -
+                  1] = '\0';  // last character was a new line character so this is how i mitigate
     // let see how many files in the folder
 
     int file_count = 0;    // how many files we have in the folder i will store them as a node in an array before building the heap
@@ -152,15 +156,19 @@ int main() {
 
 
             //create a node about relevant file  and append that node to  the array
-            fileNodes[node_index] = *NewNode(file_name,keyword_count);
-            keyword_count = 0;  //reset the keyword count
+            fileNodes[node_index] = *NewNode(file_name, keyword_count);
+            node_index++;
+
         }
     }
     closedir(folder);
 
+
+    for (int i = 0; i < file_count - 2; i++) {
+        printf("file name is : %s   relevancyScore is : %d  \n", fileNodes[i].fileName, fileNodes[i].relevancyScore);
+    }
+
     return (0);
-
-
 }
 
 
