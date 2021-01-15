@@ -5,7 +5,7 @@
 #include <ctype.h>
 
 // Yusuf Taha ATALAY
-
+// 150119040
 // define a struct for each node and put necessary attributes in it
 typedef struct node {
     char fileName[21];
@@ -14,6 +14,7 @@ typedef struct node {
 
     // number of child nodes this node has
     int degree;
+
     struct node *parent;
 
     // pointer to its immediate right sibling
@@ -22,6 +23,12 @@ typedef struct node {
     // will point to the left-most child
     struct node *child;
 } node;
+
+// struct of the heap
+typedef struct heap {
+    node *head;
+} heap;
+
 
 node *NewNode(char *fileName, int relevancyScore) {
     // Arrange the space for the new node
@@ -40,6 +47,167 @@ node *NewNode(char *fileName, int relevancyScore) {
     node->child = NULL;
 
     return node;
+}
+
+heap *CreateHeap() {
+    // EXPERIMENTAL
+    heap *heap_header;
+    heap_header = (heap *) malloc(sizeof(heap));
+    heap_header->head = NULL;
+    return heap_header;
+}
+
+node *FindMin(heap *heap_header) {
+    // EXPERIMENTAL
+    node *next = NULL;
+    node *current = heap_header->head;
+    int min = INT_MAX; // maximum integer value possible in C to represent infinity
+    while (current != NULL) {
+        if (current->relevancyScore < min) {
+            min = current->relevancyScore;
+            next = current;
+        }
+        current = current->sibling;
+    }
+    return next;
+}
+
+void Link(node *node1, node *node2) {
+    // links two B(k-1) heads and obtains a B(k) and root of it is node2
+    node1->parent = node2;  //make them arrangements
+    node1->sibling = node2->child;
+    node2->child = node1;
+    node2->degree++;  // since it gains a new child we should increment its degree
+}
+
+node *MergeRootList(heap *heap1, heap *heap2) {
+    //if any of these are empty return the other one
+    if (heap1->head == NULL) {
+        return heap2->head;
+    } else if (heap2->head == NULL) {
+        return heap1->head;
+    } else {
+        node *head;
+        node *tail;
+        node *heap1Next = heap1->head;
+        node *heap2Next = heap2->head;
+
+        if (heap1->head->degree <= heap2->head->degree) {
+            head = heap1->head;
+            heap1Next = heap2Next->sibling;
+        } else {
+            head = heap2->head;
+            heap2Next = heap2Next->sibling;
+        }
+        tail = head;
+
+
+        while (heap1Next != NULL && heap2Next != NULL) {
+            if (heap1Next->degree == heap2Next->degree) {
+                tail->sibling = heap1Next;
+                heap1Next = heap1Next->sibling;
+            } else {
+                tail->sibling = heap2Next;
+                heap2Next = heap2Next->sibling;
+            }
+            tail = tail->sibling;
+        }
+        if (heap1Next != NULL) {
+            tail->sibling = heap1Next;
+        } else {
+            tail->sibling = heap2Next;
+        }
+        return head;
+    }
+
+}
+
+heap *Merge(heap *heap1, heap *heap2) {
+    //merges two heap
+    heap *header = CreateHeap();
+    header->head = MergeRootList(heap1, heap2);
+    if (header->head == NULL) {
+        return header;
+    }
+    node *previous = NULL;
+    node *current = header->head;
+    node *next = current->sibling;
+
+    while (next != NULL) {
+        if (next->degree != current->degree || (next->sibling != NULL && next->sibling->degree == current->degree)) {
+            previous = current;
+            current = next;
+        } else if (current->relevancyScore <= next->relevancyScore) {
+            current->sibling = next->sibling;
+            Link(next, current);
+        } else {
+            if (previous == NULL) {
+                header->head = next;
+            } else {
+                previous->sibling = next;
+            }
+            Link(current, next);
+            current = next;
+        }
+        next = current->sibling;
+    }
+
+    return header;
+}
+
+void Insert(heap *heap, node *file) {
+    struct heap *heap1 = CreateHeap();
+    heap->head = file;
+    struct heap *newHeap = Merge(heap, heap1);
+    heap->head = newHeap->head;
+    //node *toInsert = NewNode(fileName, relevancyScore);
+    //toInsert->parent = toInsert->child = toInsert->sibling = NULL;
+    //toInsert->degree = 0;
+    //heap1->head = toInsert;
+    //heap = Merge(heap1, heap);
+}
+
+node *ExtractMin(heap *heap) {
+    if (heap->head == NULL) {
+        return NULL;
+    }
+
+
+    node *temp = heap->head;
+    node *current = temp->sibling;
+    node *previous = temp;
+    node *tempPrev = NULL;
+
+    while (current != NULL) {
+        if (current->relevancyScore < temp->relevancyScore) {
+            temp = current;
+            tempPrev = previous;
+        }
+        previous = current;
+        current = current->sibling;
+    }
+
+    if (temp == heap->head) {
+        heap->head = temp->sibling;
+    } else {
+        tempPrev->sibling = temp->sibling;
+    }
+
+
+    struct heap *holder = CreateHeap();
+
+    node *z = previous->child;
+    while (z != NULL) {
+        node *next = z->sibling;
+        z->sibling = holder->head;
+        holder->head = z;
+        z = next;
+    }
+    struct heap *newHeap = Merge(heap, holder);
+    heap->head = newHeap->head;
+    return temp;
+
+
 }
 
 // this method will take a keyword and a file to search the keyword occurrence count
@@ -79,12 +247,11 @@ int fileScore(char *content, char *keyword) {
         token = strtok(NULL, delimiter);  //continue to the next  token;
     }
     return counter;
-
-
 }
 
 
 int main() {
+
 
     char searchKeyword[30];
     printf("Type the search keyword: ");
@@ -125,9 +292,9 @@ int main() {
             if (!strcmp(entry->d_name, ".") || !strcmp(entry->d_name, "..")) {
                 continue;
             }
-            printf("file name: %s\n", entry->d_name);
+            // printf("file name: %s\n", entry->d_name);
             // create all per-file variables here
-            int keyword_count = 0;
+            int keyword_count;
             char file_name[21];
             strcpy(file_name, entry->d_name);
             char file_position[23];
@@ -162,12 +329,19 @@ int main() {
         }
     }
     closedir(folder);
+    heap *fileHeap = CreateHeap();
 
 
     for (int i = 0; i < file_count - 2; i++) {
-        printf("file name is : %s   relevancyScore is : %d  \n", fileNodes[i].fileName, fileNodes[i].relevancyScore);
+        Insert(fileHeap, &fileNodes[i]);
     }
 
+
+    for (int i = 0; i < 41; i++) {
+        node *removedOne = ExtractMin(fileHeap);
+        printf("removed file is %s  and its score is %d \n", removedOne->fileName, removedOne->relevancyScore);
+
+    }
     return (0);
 }
 
